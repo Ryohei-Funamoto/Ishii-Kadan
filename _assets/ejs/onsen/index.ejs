@@ -1,0 +1,85 @@
+<% let pageId='onsen' ; %>
+
+  <%- include('../common/_header', {pageId: pageId}) %>
+
+    <% console.log(jsonData) %>
+      <main class="l-sub">
+        <div class="l-sub__mv l-sub-mv sub-mv onsen-mv">
+          <h1 class="sub-mv__title onsen-mv__title">
+            <%= jsonData.pages[pageId].name; %>
+          </h1>
+        </div><!-- /.l-sub__mv l-sub-mv onsen-mv -->
+
+        <div class="l-sub__main-area l-sub-main-area l-sub-main-area--onsen sub-main-area onsen-main-area">
+          <div class="l-container sub-main-area__container onsen-main-area__container">
+            <div class="l-breadcrumb p-breadcrumb">
+              <span><a href="<%= jsonData.pages.home.slug; %>">トップ</a></span>
+              &ensp;&gt;&ensp;
+              <span>
+                <%= jsonData.pages[pageId].name %>
+              </span>
+            </div><!-- /.l-breadcrumb p-breadcrumb -->
+
+            <p class="sub-main-area__description onsen-main-area__description">
+              心も身体も癒やす汐の温泉。<br>湯あたりしにくく、赤ちゃんから年配の方までどなたでもゆっくりと安心して入っていただけます。<br>柔らかく優しい湯にじっくりと漬かれば、心身共にリラックスできます。
+            </p><!-- /.sub-main-area__description onsen-main-area__description -->
+
+            <% const subFeatures=[ { imgSrc: '/img/onsen/onsen01.jpg' , imgAlt: '貸し切り露天風呂「雲居の湯」' ,
+              title: '貸し切り露天風呂「雲居の湯」' ,
+              description: '弱酸性の湯質が優しく肌を包み込むような心地よさ<br>最上階の露天風呂「雲居の湯」では、湯冷めしにくい食塩泉を熱海の町並みを遠方に望みながら・・・' , supplement: ''
+              }, { imgSrc: '/img/onsen/onsen02.jpg' , imgAlt: '美肌を促す乳白色の硫黄泉を' , title: '美肌を促す乳白色の硫黄泉を' ,
+              description: 'まじりっけなしの白いにごり湯。鳥海山から引いた酸性の強い硫酸塩泉を、 たっぷりと掛け流しています。<br>四季の移り変わりを、天然温泉の湯に浸りながら味わってください。' ,
+              supplement: '' } ] %>
+              <ul class="sub-main-area__features onsen-main-area__features">
+                <% for (let i in subFeatures) { %>
+                  <li class="sub-main-area__feature onsen-main-area__feature sub-features-media">
+                    <figure class="sub-features-media__image">
+                      <img src="<%- subFeatures[i].imgSrc; %>" alt="<%- subFeatures[i].imgAlt; %>" />
+                    </figure><!-- /.sub-features-media__image -->
+                    <div class="sub-features-media__body">
+                      <h3 class="sub-features-media__title">
+                        <%- subFeatures[i].title; %>
+                      </h3>
+                      <p class="sub-features-media__description">
+                        <%- subFeatures[i].description; %>
+                      </p>
+                      <% if (subFeatures[i].supplement) { %>
+                        <p class="sub-features-media__supplement">
+                          <%- subFeatures[i].supplement; %>
+                        </p>
+                        <% } %>
+                    </div><!-- /.sub-features-media__body -->
+                  </li><!-- /.sub-main-area__feature onsen-main-area__feature sub-features-media -->
+                  <% } %>
+              </ul><!-- /.sub-main-area__features onsen-main-area__features -->
+
+              <div class="sub-main-area__footer onsen-main-area__footer onsen-kounou">
+                <div class="l-container onsen-kounou__container">
+                  <h3 class="onsen-kounou__title">温泉の効能</h3>
+
+                  <div class="onsen-kounou__table-wrapper">
+                    <table class="onsen-kounou__table onsen-kounou-table">
+                      <tr class="onsen-kounou-table__item onsen-kounou-item">
+                        <th class="onsen-kounou-item__header">効能</th>
+                        <td class="onsen-kounou-item__description">神経痛・慢性関節リューマチ・腰痛・冷え性・慢性婦人病・うちみなど</td>
+                      </tr><!-- /.onsen-kounou-table__item onsen-kounou-item -->
+
+                      <tr class="onsen-kounou-table__item onsen-kounou-item">
+                        <th class="onsen-kounou-item__header">泉質</th>
+                        <td class="onsen-kounou-item__description">ナトリウム・カルシウム-塩化物泉</td>
+                      </tr><!-- /.onsen-kounou-table__item onsen-kounou-item -->
+
+                      <tr class="onsen-kounou-table__item onsen-kounou-item">
+                        <th class="onsen-kounou-item__header">飲用効果</th>
+                        <td class="onsen-kounou-item__description">
+                          弱塩化物泉は肌にやわらかなため、高齢者や病後の回復期によく、飲用すれば慢性便秘や慢性消化器病に効果があります。</td>
+                      </tr><!-- /.onsen-kounou-table__item onsen-kounou-item -->
+                    </table><!-- /.onsen-kounou__table onsen-kounou-table -->
+                  </div><!-- /.onsen-kounou__table-wrapper -->
+                </div><!-- /.l-container onsen-kounou__container -->
+              </div><!-- /.sub-main-area__footer onsen-main-area__footer onsen-kounou -->
+          </div><!-- /.l-container sub-main-area__container onsen-main-area__container -->
+        </div><!-- /.l-sub__main-area sub-main-area onsen-main-area -->
+      </main><!-- /.l-sub -->
+
+      <%- include('../common/_footer', {pageId: pageId}) %>

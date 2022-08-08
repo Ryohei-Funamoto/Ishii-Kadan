@@ -1,0 +1,29 @@
+@use "../../global/" as *;
+
+.c-button-reserve {
+  background-color: $color-main-accent;
+  border: rem(2) solid $color-main-accent;
+  color: $color-text02;
+  display: inline-flex;
+  font-family: $font-family-base;
+  font-size: rem(16);
+  font-weight: $extra-bold;
+  line-height: 1;
+  padding: rem(17) rem(37);
+  transition: background-color $duration, color $duration;
+}
+
+.c-button-reserve::before {
+  content: '\f073';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  margin-right: rem(10);
+}
+
+.c-button-reserve:focus,
+.c-button-reserve:hover {
+  @include mq('hover-pc') {
+    background-color: $color-white;
+    color: $color-main-accent;
+  }
+}

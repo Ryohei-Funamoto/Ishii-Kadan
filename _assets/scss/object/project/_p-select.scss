@@ -1,0 +1,46 @@
+@use "../../global/" as *;
+
+/* セレクトボックスの独自スタイル */
+.p-select {
+  display: block;
+  position: relative;
+}
+
+.p-select select {
+  background-color: #FFFFFF;
+  border: rem(1) solid $color-gray-light02;
+  font-size: rem(14);
+  padding: rem(8) rem(32) rem(8) rem(10);
+}
+
+/* セレクトボックスの右端にグレーの背景 */
+// .p-select::before {
+//   background-color: #DDDDDD;
+//   bottom: 0;
+//   content: "";
+//   display: block;
+//   height: calc(100% - #{rem(2)});
+//   margin: auto;
+//   pointer-events: none;
+//   position: absolute;
+//   right: rem(1);
+//   top: 0;
+//   width: rem(30);
+// }
+
+/* セレクトボックスの右端に矢印 */
+// .p-select::after {
+//   border-bottom: rem(2) solid #444444;
+//   border-left: rem(2) solid #444444;
+//   bottom: 0;
+//   content: "";
+//   display: block;
+//   height: rem(8);
+//   margin: auto;
+//   pointer-events: none;
+//   position: absolute;
+//   right: rem(12);
+//   top: 0;
+//   transform: rotate(-45deg);
+//   width: rem(8);
+// }

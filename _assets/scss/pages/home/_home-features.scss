@@ -1,0 +1,9 @@
+@use "../../global/" as *;
+
+.home-features__item:nth-child(n + 2) {
+  margin-top: rem(60);
+
+  @include mq('md') {
+    margin-top: rem(122);
+  }
+}

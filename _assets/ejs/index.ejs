@@ -1,0 +1,255 @@
+<% let pageId='home' ; %>
+
+  <%- include('./common/_header', {pageId:pageId }) %>
+
+    <%# console.log(jsonData) %>
+      <main class="l-home">
+        <div class="l-home__mv l-home-mv home-mv">
+          <div class="swiper home-mv__slider home-mv-slider js-top-mv-slider">
+            <% const mvImg=[ { imgSrc: '/img/home/mainbg01.jpg' , }, { imgSrc: '/img/home/mainbg02.jpg' , }, {
+              imgSrc: '/img/home/mainbg03.jpg' , }, ] %>
+              <div class="swiper-wrapper home-mv-slider__slides">
+                <% for (let i in mvImg) { %>
+                  <div class="swiper-slide home-mv-slider__slide">
+                    <div class="home-mv-slider__image">
+                      <img src="<%= mvImg[i].imgSrc; %>" alt="">
+                    </div><!-- /.home-mv-slider__image -->
+                  </div><!-- /.swiper-slide home-mv-slider__slide -->
+                  <% } %>
+              </div><!-- /.swiper-wrapper home-mv-slider__slides -->
+          </div><!-- /.swiper home-mv__slider home-mv-slider -->
+
+          <h2 class="home-mv__title">
+            <span>頑張る人の</span>
+            <span>頑張らない時間</span>
+          </h2><!-- /.home-mv__title -->
+        </div><!-- /.l-home__mv l-home-mv home-mv -->
+
+        <div class="l-home__concept l-home-concept home-concept">
+          <div class="l-container home-concept__container">
+            <div class="home-concept__inner">
+              <p class="home-concept__lead js-concept-text">
+                <span>温海温泉の</span>
+                <span>美しさに癒やされて</span>
+              </p><!-- /.home-concept__lead -->
+
+              <p class="home-concept__description js-concept-text">
+                <span>東北の奥座敷である温海温泉郷</span>
+                <span>開湯は約1300年前とされ、役小角が</span>
+                <span>発見したと伝えられます</span>
+              </p><!-- /.home-concept__description -->
+
+              <p class="home-concept__description js-concept-text">
+                <span>石井花壇は江戸より続く由緒ある旅館で</span>
+                <span>クラシックな作りの中に大正ロマンあふれる</span>
+                <span>内装を残しております</span>
+              </p><!-- /.home-concept__description -->
+
+              <p class="home-concept__description js-concept-text">
+                <span>圧倒的癒やしの空間で</span>
+                <span>頑張る現代人に</span>
+                <span>頑張らない圧倒的な非日常をご提供します</span>
+              </p><!-- /.home-concept__description -->
+
+              <p class="home-concept__signature js-concept-text">石井花壇</p>
+            </div><!-- /.home-concept__inner -->
+          </div><!-- /.l-container home-concept__container -->
+        </div><!-- /.l-home__concept l-home-concept home-concept -->
+
+        <div class="l-home__features l-home-features home-features">
+          <% const feature=[ { imgSrc: '/img/home/oheya-home.jpg' , imgAlt: '' , lead: '喧騒から離れた空間<br>心落ち着く至極のひととき' ,
+            description: 'まるで時が止まったかのような、圧倒的な静寂のなかで、<br class="u-hidden-sp">ひたすらにゆったりと…。<br>最高級の「何もしない時間」をお過ごしください。' , url: jsonData.pages.oheya.slug , button: 'お部屋について' ,
+            }, { imgSrc: '/img/home/menu-home.jpg' , imgAlt: '' , lead: '出迎えるのは<br>極上の温海料理' ,
+            description: '最も旬の食材を愉しむ、最高の贅沢を<br class="u-hidden-sp">最高級A5ランクの米沢牛と共に頂く。<br>あなたの人生史に残る「極上の感動」を<br class="u-hidden-sp">お約束します。' , url: jsonData.pages.menu.slug , button: '料理について' ,
+            }, { imgSrc: '/img/home/onsen-home.jpg' , imgAlt: '' , lead: '疲れ切った身体にやすらぎを<br>温海の源泉に癒やされて' ,
+            description: '古くは弘法大師の病をも治療したと言われる熱海の泉質。<br>現代人の疲弊しきった身体を修復する最高級の湯治場として<br class="u-hidden-sp">ご活用ください。' , url: jsonData.pages.onsen.slug , button: '温泉について' , },
+            ] %>
+            <ul class="home-features__items">
+              <% for (let i in feature) { %>
+                <li
+                  class="home-features__item home-features-media js-features-item">
+                  <figure class="home-features-media__image js-features-image-wrapper js-features-image-wrapper">
+                    <img src="<%- feature[i].imgSrc; %>" alt="<%- feature[i].imgAlt; %>" class="js-features-image">
+                    <div class="home-features-media__extend-bg js-features-extend-bg"></div>
+                  </figure><!-- /.home-features-media__image -->
+                  <div class="home-features-media__body js-features-body">
+                    <p class="home-features-media__lead">
+                      <%- feature[i].lead; %>
+                    </p>
+                    <p class="home-features-media__description">
+                      <%- feature[i].description; %>
+                    </p>
+                    <div class="home-features-media__button-wrapper">
+                      <a href="<%- feature[i].url; %>" class="home-features-media__button c-button">
+                        <%- feature[i].button; %>
+                      </a>
+                    </div><!-- /.home-features-media__button-wrapper -->
+                  </div><!-- /.home-features-media__body -->
+                </li><!-- /.home-features__item home-features-media -->
+                <% } %>
+            </ul><!-- /.home-features__items -->
+        </div><!-- /.l-home__features l-home-features home-features -->
+
+        <section class="l-home__recommended l-home-recommended home-recommended">
+          <div class="l-container home-recommended__container">
+            <h2 class="home-recommended__title p-section-title js-section-title">
+              <img src="/img/common/section-logo.png" alt="">
+              <span>おすすめご宿泊プラン</span>
+            </h2><!-- /.home-recommended__title p-section-title -->
+
+            <% const recommended=[ { url: '#' , imgSrc: '/img/home/recommended01.jpg' , imgAlt: '' ,
+              title: '朝食付きプラン、日本近海で取れたのどぐろを朝食として…' , description: '最高級と称されるのどぐろ、正式には「アカムツ」と呼ばれる魚、味は独特の上品な味わいで、焼いても煮ても美味'
+              , }, { url: '#' , imgSrc: '/img/home/recommended02.jpg' , imgAlt: '' , title: '【期間限定】熱海蟹をたっぷりと愉しむプラン。' ,
+              description: '温海で水揚げされた蟹は「温海蟹」として知られ、嗜好品として愛されてきました。この宿泊プランでは存分に' , }, { url: '#' ,
+              imgSrc: '/img/home/recommended03.jpg' , imgAlt: '' , title: '【平日限定】贅沢美味懐石プラン。海辺の四季旬彩プラン。' ,
+              description: '熱海近海で取れた魚を鮮度そのままに舟盛りにしてご提供。生きた味をお楽しみください。' , }, ] %>
+              <ul class="home-recommended__items">
+                <% for (let i in recommended) { %>
+                  <li class="home-recommended__item js-recommended-card">
+                    <a href="#" class="p-recommended-card">
+                      <figure class="p-recommended-card__image">
+                        <img src="<%= recommended[i].imgSrc; %>" alt="<%= recommended[i].imgAlt; %>">
+                      </figure><!-- /.p-recommended-card__image -->
+                      <div class="p-recommended-card__body">
+                        <h3 class="p-recommended-card__title">
+                          <%= recommended[i].title; %>
+                        </h3>
+                        <p class="p-recommended-card__description">
+                          <%= recommended[i].description; %>
+                        </p>
+                      </div><!-- /.p-recommended-card__body -->
+                    </a><!-- /.p-recommended-card -->
+                  </li><!-- /.home-recommended__item -->
+                  <% } %>
+              </ul><!-- /.home-recommended__items -->
+          </div><!-- /.l-container home-recommended__container -->
+        </section><!-- /.l-home__recommended l-home-recommended home-recommended -->
+
+        <section class="l-home__news l-home-news home-news">
+          <div class="l-container home-news__container">
+            <h2 class="home-news__title p-section-title js-section-title">
+              <img src="/img/common/section-logo.png" alt="">
+              <span>お知らせ</span>
+            </h2><!-- /.home-news__title p-section-title -->
+
+            <ul class="home-news__tabs js-news-tabs">
+              <li class="home-news__tab is-active js-tab">営業情報</li>
+              <li class="home-news__tab js-tab">その他</li>
+            </ul><!-- /.home-news__tabs -->
+
+            <div class="home-news__area">
+              <div class="home-news__panel is-show js-panel">
+                <% const openInfo=[ { url: '#' , imgSrc: '/img/home/news01.jpg' , imgAlt: '年末最後の営業日は27日になります。' ,
+                  timeAttr: '2020-12-24' , timeStr: '2020.12.24' , title: '年末最後の営業日は27日になります。' , }, { url: '#' ,
+                  imgSrc: '/img/home/news02.jpg' , imgAlt: '年末最後の営業日のお知らせ' , timeAttr: '2020-12-24' ,
+                  timeStr: '2020.12.24' , title: '年末最後の営業日のお知らせ' , }, { url: '#' , imgSrc: '/img/home/news02.jpg' ,
+                  imgAlt: '12.21は臨時休業とさせていただきますので、よろしくお願いします。' , timeAttr: '2020-12-11' , timeStr: '2020.12.11' ,
+                  title: '12.21は臨時休業とさせていただきますので、よろしくお願いします。' , }, { url: '#' , imgSrc: '/img/home/news01.jpg' ,
+                  imgAlt: '年末最後の営業日のお知らせ' , timeAttr: '2020-12-11' , timeStr: '2020.12.11' , title: '年末最後の営業日のお知らせ' , },
+                  { url: '#' , imgSrc: '/img/home/news01.jpg' , imgAlt: '和室の改装を行いますため、12.10はお休みさせていただきます。' ,
+                  timeAttr: '2020-12-01' , timeStr: '2020.12.01' , title: '和室の改装を行いますため、12.10はお休みさせていただきます。' , }, {
+                  url: '#' , imgSrc: '/img/home/news02.jpg' , imgAlt: '年末最後の営業日のお知らせ' , timeAttr: '2020-12-01' ,
+                  timeStr: '2020.12.01' , title: '年末最後の営業日のお知らせ' , }, ] %>
+                  <ul class="home-news__items">
+                    <% for (let i in openInfo) { %>
+                      <li class="home-news__item js-news-post">
+                        <a href="<%- openInfo[i].url; %>" class="p-post">
+                          <figure class="p-post__image">
+                            <img src="<%= openInfo[i].imgSrc; %>" alt="<%= openInfo[i].imgAlt; %>">
+                          </figure><!-- /.p-post__image -->
+                          <div class="p-post__body">
+                            <time datetime="<%- openInfo[i].timeAttr; %>" class="p-post__published">
+                              <%- openInfo[i].timeStr; %>
+                            </time>
+                            <h3 class="p-post__title">
+                              <%- openInfo[i].title; %>
+                            </h3>
+                          </div><!-- /.p-post__body -->
+                        </a><!-- /.p-post -->
+                      </li><!-- /.home-news__item -->
+                      <% } %>
+                  </ul><!-- /.home-news__items -->
+              </div><!-- /.home-news__panel -->
+
+              <div class="home-news__panel js-panel">
+                <% const others=[ { url: '#' , imgSrc: '/img/home/news01.jpg' , imgAlt: '石井花壇感謝祭の開催について' ,
+                  timeAttr: '2020-11-20' , timeStr: '2020.11.20' , title: '石井花壇感謝祭の開催について' }, { url: '#' ,
+                  imgSrc: '/img/home/news01.jpg' , imgAlt: '露天風呂無料解放のお知らせ' , timeAttr: '2020-11-15' ,
+                  timeStr: '2020.11.15' , title: '露天風呂無料解放のお知らせ' , }, { url: '#' , imgSrc: '/img/home/news01.jpg' ,
+                  imgAlt: '石井花壇ウェブサイト、メンテナンスのお知らせ' , timeAttr: '2020-11-05' , timeStr: '2020.11.05' ,
+                  title: '石井花壇ウェブサイト、メンテナンスのお知らせ' , }, ] %>
+                  <ul class="home-news__items">
+                    <% for (let i in others) { %>
+                      <li class="home-news__item">
+                        <a href="<%- others[i].url; %>" class="p-post">
+                          <figure class="p-post__image">
+                            <img src="<%- others[i].imgSrc; %>" alt="<%- others[i].imgAlt; %>">
+                          </figure><!-- /.p-post__image -->
+                          <div class="p-post__body">
+                            <time datetime="<%- others[i].timeAttr; %>" class="p-post__published">
+                              <%- others[i].timeStr; %>
+                            </time>
+                            <h3 class="p-post__title">
+                              <%- others[i].title; %>
+                            </h3>
+                          </div><!-- /.p-post__body -->
+                        </a><!-- /.p-post -->
+                      </li><!-- /.home-news__item -->
+                      <% } %>
+                  </ul><!-- /.home-news__items -->
+              </div><!-- /.home-news__panel -->
+            </div><!-- /.home-news__area -->
+          </div><!-- /.l-container home-news__container -->
+        </section><!-- /.l-home__news l-home-news home-news -->
+      </main>
+
+      <section class="l-home__access l-home-access home-access">
+        <div class="l-container home-access__container">
+          <h2 class="home-access__title p-section-title js-section-title">
+            <img src="/img/common/section-logo.png" alt="">
+            <span>アクセス</span>
+          </h2><!-- /.home-access__title p-section-title -->
+
+          <div class="home-access__media home-access-media">
+            <figure class="home-access-media__image js-access-img">
+              <img src="/img/home/access.jpg" alt="石井花壇アクセス">
+            </figure><!-- /.home-access__image -->
+
+            <div class="home-access-media__body js-access-info">
+              <dl class="home-access-media__info home-access-info">
+                <div class="home-access-info__item">
+                  <dt class="home-access-info__term">住所</dt>
+                  <dd class="home-access-info__description">
+                    〒000-0000<br>山形県鶴岡市xxxxxxxxxx
+                  </dd><!-- /.home-access-info__description -->
+                </div><!-- /.home-access-info__item -->
+                <div class="home-access-info__item">
+                  <dt class="home-access-info__term">TEL/FAX</dt>
+                  <dd class="home-access-info__description">
+                    000-0000-0000/00-0000-0000
+                  </dd><!-- /.home-access-info__description -->
+                </div><!-- /.home-access-info__item -->
+                <div class="home-access-info__item">
+                  <dt class="home-access-info__term">営業時間</dt>
+                  <dd class="home-access-info__description">
+                    14:00-23:00
+                  </dd><!-- /.home-access-info__description -->
+                </div><!-- /.home-access-info__item -->
+              </dl><!-- /.home-access__info home-access-info -->
+
+              <p class="home-access-media__supplement">
+                ＊4名以上のご予約の場合は、最寄り駅の「鶴岡駅」より送迎が可能ですので、 ご連絡ください。
+              </p><!-- /.home-access-media__supplement -->
+            </div><!-- /.home-access-media__body -->
+          </div><!-- /.home-access__media -->
+
+          <div class="home-access__map js-access-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24933.846757694057!2d139.58105087127484!3d38.63207256963592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8c6dbd6c03ae15%3A0x10bc5da99bc816ef!2z44CSOTk5LTcyMDUg5bGx5b2i55yM6ba05bKh5biC5rip5rW3!5e0!3m2!1sja!2sjp!4v1659320636578!5m2!1sja!2sjp"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div><!-- /.home-access__map -->
+        </div><!-- /.l-container home-access__container -->
+      </section><!-- /.l-home__access l-home-access home-access -->
+
+      <%- include('./common/_footer', {pageId:pageId }) %>

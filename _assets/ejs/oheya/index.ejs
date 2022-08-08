@@ -1,0 +1,61 @@
+<% let pageId='oheya' ; %>
+
+  <%- include('../common/_header', {pageId: pageId}) %>
+
+    <% console.log(jsonData) %>
+      <main class="l-sub">
+        <div class="l-sub__mv l-sub-mv sub-mv oheya-mv">
+          <h1 class="sub-mv__title oheya-mv__title">
+            <%= jsonData.pages[pageId].name; %>
+          </h1>
+        </div><!-- /.l-sub__mv l-sub-mv oheya-mv -->
+
+        <div class="l-sub__main-area l-sub-main-area sub-main-area oheya-main-area">
+          <div class="l-container sub-main-area__container oheya-main-area__container">
+            <div class="l-breadcrumb p-breadcrumb">
+              <span><a href="<%= jsonData.pages.home.slug; %>">トップ</a></span>
+              &ensp;&gt;&ensp;
+              <span>
+                <%= jsonData.pages[pageId].name %>
+              </span>
+            </div><!-- /.l-breadcrumb p-breadcrumb -->
+
+            <p class="sub-main-area__description oheya-main-area__description">
+              創業より受け継がれてきた石井花壇の和の造り<br>温海の雄大な絶景を堪能していただけるように設計された客室<br>ゆるやかに流れ行く時間に身を委ねて
+            </p><!-- /.sub-main-area__description oheya-main-area__description -->
+
+            <% const subFeatures=[ { imgSrc: '/img/oheya/oheya01.jpg' , imgAlt: '温泉付き客室' , title: '温泉付き客室' ,
+              description: '温海の源泉かけ流し露天風呂付き客室になります。<br>あなただけの上質な安らぎのひとときを。' ,
+              supplement: '＊部屋数に限りがございます。<br>＊洗い場はないため、お体を先に大浴場でお流しになって頂く必要があります。' }, { imgSrc: '/img/oheya/oheya02.jpg'
+              , imgAlt: '庭園付き客室' , title: '庭園付き客室' , description: '庭園付きの客室になります。<br>お庭を見ながら、ほっとするひとときをお過ごしください。' ,
+              supplement: '＊お庭は複数のお客様と囲む形になります。<br>＊部屋数に限りがあります。<br>＊ご希望の方は「お抹茶/500円」をルームサービスさせていただきます。' }, {
+              imgSrc: '/img/oheya/oheya03.jpg' , imgAlt: '一般客室' , title: '一般客室' ,
+              description: '最もベーシックな客室になります。伝統の中にモダンさを取り入れた内装となっており、とても過ごしやすくしていただけます。' ,
+              supplement: '＊全室お部屋より日本海を望むことができます。' } ] %>
+              <ul class="sub-main-area__features oheya-main-area__features">
+                <% for (let i in subFeatures) { %>
+                  <li class="sub-main-area__feature oheya-main-area__feature sub-features-media">
+                    <figure class="sub-features-media__image">
+                      <img src="<%- subFeatures[i].imgSrc; %>" alt="<%- subFeatures[i].imgAlt; %>" />
+                    </figure><!-- /.sub-features-media__image -->
+                    <div class="sub-features-media__body">
+                      <h3 class="sub-features-media__title">
+                        <%- subFeatures[i].title; %>
+                      </h3>
+                      <p class="sub-features-media__description">
+                        <%- subFeatures[i].description; %>
+                      </p>
+                      <% if (subFeatures[i].supplement) { %>
+                        <p class="sub-features-media__supplement">
+                          <%- subFeatures[i].supplement; %>
+                        </p>
+                        <% } %>
+                    </div><!-- /.sub-features-media__body -->
+                  </li><!-- /.sub-main-area__feature oheya-main-area__feature sub-features-media -->
+                  <% } %>
+              </ul><!-- /.sub-main-area__features oheya-main-area__features -->
+          </div><!-- /.l-container sub-main-area__container oheya-main-area__container -->
+        </div><!-- /.l-sub__main-area sub-main-area oheya-main-area -->
+      </main><!-- /.l-sub -->
+
+      <%- include('../common/_footer', {pageId: pageId}) %>

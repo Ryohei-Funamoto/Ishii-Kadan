@@ -1,0 +1,88 @@
+@use "sass:math";
+@use "../../global/" as *;
+
+.home-concept {
+  background-image: url(../img/bg/bg01.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-concept__container {
+  max-width: rem(335 + strip-unit($padding-sp) * 2);
+
+  @include mq('md') {
+    max-width: rem(944 + strip-unit($padding-pc) * 2);
+  }
+}
+
+.home-concept__inner {
+  @include mq('md') {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.home-concept__lead,
+.home-concept__description,
+.home-concept__signature {
+  @include mq('md') {
+    text-orientation: upright;
+    writing-mode: vertical-rl;
+  }
+}
+
+.home-concept__lead>span,
+.home-concept__description>span {
+  display: block;
+}
+
+.home-concept__lead {
+  font-size: rem(24);
+  letter-spacing: 0.25em;
+  
+  @include mq('md') {
+    font-size: rem(28);
+    letter-spacing: 0.5em;
+  }
+}
+
+.home-concept__lead>span:nth-child(2) {
+  @include mq('md') {
+    margin-right: rem(19);
+    text-indent: 3em;
+  }
+}
+
+.home-concept__description {
+  font-size: rem(16);
+  @include lineHeight(16, 32);
+  margin-top: rem(32);
+  
+  @include mq('md') {
+    letter-spacing: math.div(6, 16) * 1em;
+    @include lineHeight(16, 22);
+    margin-right: rem(112);
+    margin-top: 0;
+    text-indent: 5.25em;
+  }
+}
+
+.home-concept__description>span:nth-child(n + 2) {
+  @include mq('md') {
+    margin-right: rem(22);
+  }
+}
+
+.home-concept__signature {
+  font-size: rem(22);
+  letter-spacing: math.div(10, 22) * 1em;
+  @include lineHeight(22, 32);
+  margin-top: rem(32);
+  text-align: right;
+  
+  @include mq('md') {
+    margin-top: 0;
+    margin-right: rem(110);
+  }
+}

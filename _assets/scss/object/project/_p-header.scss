@@ -1,0 +1,80 @@
+@use "../../global/" as *;
+
+.p-header {
+  background-color: transparent;
+}
+
+.p-header--sub {
+  background-color: $color-white;
+}
+
+div.p-header--sub {
+  transform: translateY(-150%);
+  transition: transform 0.5s;
+}
+
+div.p-header--sub.is-show {
+  transform: translateY(0);
+}
+
+.p-header__container {
+  height: inherit;
+  padding: 0 rem(10) 0 rem(20);
+  
+  @include mq('md') {
+    max-width: rem(1920);
+    padding: 0 rem(20);
+  }
+}
+
+.p-header__inner {
+  align-items: center;
+  display: flex;
+  height: inherit;
+}
+
+.p-header__left {
+  align-items: center;
+  display: flex;
+  height: inherit;
+}
+
+.p-header__logo {
+  width: rem(125);
+
+  @include mq('md') {
+    width: rem(200);
+  }
+}
+
+.p-header__nav {
+  height: inherit;
+  margin-left: rem(105);
+}
+
+.p-header__right {
+  margin-left: auto;
+}
+
+.p-header__button {
+  display: none;
+
+  @include mq('md') {
+    display: inline-flex;
+  }
+}
+
+.p-header__hamburger {
+  height: rem(44);
+  width: rem(44);
+  z-index: $layer-hamburger;
+}
+
+.p-header__drawer {
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: $layer-drawer;
+}

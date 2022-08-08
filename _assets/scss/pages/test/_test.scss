@@ -1,0 +1,15 @@
+@use "../../global/" as *;
+
+.test {
+  font-weight: $bold;
+  
+  @include mq('md') {
+    color: skyblue;
+    font-size: rem(24);
+  }
+
+  @include mq('container') {
+    color: pink;
+    font-size: rem(32);
+  }
+}

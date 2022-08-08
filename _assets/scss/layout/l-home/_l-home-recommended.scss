@@ -1,0 +1,9 @@
+@use "../../global/" as *;
+
+.l-home-recommended {
+  padding: rem(48) 0 rem(116);
+  
+  @include mq('md') {
+    padding: rem(60) 0 rem(144);
+  }
+}

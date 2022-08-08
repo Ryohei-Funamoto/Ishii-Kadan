@@ -1,0 +1,9 @@
+@use "../../global/" as *;
+
+.l-home-news {
+  padding: rem(40) 0;
+
+  @include mq('md') {
+    padding-top: rem(60) 0;
+  }
+}

@@ -1,0 +1,58 @@
+@use "../../global/" as *;
+
+/* ラジオボタンの独自スタイル */
+.p-radio {
+  display: block;
+  font-size: 0; /* inline-blockの隙間防止 */
+}
+
+.p-radio > span {
+  display: inline-block;
+}
+
+.p-radio input[type="radio"] {
+  height: rem(24);
+  width: rem(24);
+}
+
+.p-radio input[type="radio"] + span {
+  cursor: pointer;
+  display: inline-block;
+  font-size: rem(16);
+  margin: 0 rem(24) rem(16) 0;
+  padding-left: rem(32);
+  position: relative;
+}
+
+.p-radio input[type="radio"] + span::before {
+  background-color: #FFFFFF;
+  border: rem(1) solid #888888;
+  border-radius: 50%;
+  content: "";
+  height: rem(24);
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: rem(24);
+}
+
+.p-radio input[type="radio"] + span::after {
+  background-color: #3D98B4;
+  border-radius: 50%;
+  content: "";
+  height: rem(16);
+  left: rem(4);
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.3s, visibility 0.3s;
+  visibility: hidden;
+  width: rem(16);
+}
+
+.p-radio input[type="radio"]:checked + span::after {
+  opacity: 1;
+  visibility: visible;
+}

@@ -1,0 +1,30 @@
+@use "../../global/" as *;
+
+.home-mv-slider__slide {
+  height: 100%;
+  width: 100%;
+}
+
+.home-mv-slider__image {
+  height: 100%;
+  width: 100%;
+}
+
+.swiper-slide-active .home-mv-slider__image,
+.swiper-slide-duplicate-active .home-mv-slider__image,
+.swiper-slide-prev .home-mv-slider__image {
+  animation-delay: 0s; /* アニメーションを遅らせる時間 */
+  animation-direction: normal; /* アニメーションの再生方向 */
+  animation-duration: 10s; /* アニメーションの時間 */
+  animation-fill-mode: both; /* アニメーションの開始時と終了時の状態を指定 */
+  animation-iteration-count: 1; /* アニメーションの繰り返し回数 */
+  animation-name: zoomUp;
+  animation-timing-function: linear; /* アニメーションの進行具合 */
+}
+
+.home-mv-slider__image>img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+}

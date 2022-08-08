@@ -1,0 +1,56 @@
+@use "../../global/" as *;
+
+.p-recommended-card {
+  color: $color-text;
+  display: flex;
+  flex-direction: column;
+}
+
+.p-recommended-card__image {
+  overflow: hidden;
+  position: relative;
+}
+
+.p-recommended-card__image::before {
+  content: '';
+  display: block;
+  @include paddingTopHack(335, 221);
+  
+  @include mq('md') {
+    @include paddingTopHack(331, 209);
+  }
+}
+
+.p-recommended-card__image>img {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 0;
+  transition: transform $duration;
+  width: 100%;
+}
+
+.p-recommended-card:focus .p-recommended-card__image>img,
+.p-recommended-card:hover .p-recommended-card__image>img {
+  @include mq('hover-pc') {
+    transform: scale(1.1);
+  }
+}
+
+.p-recommended-card__body {
+  margin-top: rem(26);
+}
+
+.p-recommended-card__title {
+  font-size: rem(20);
+  font-weight: $medium;
+  @include lineHeight(20, 32);
+}
+
+.p-recommended-card__description {
+  font-size: rem(16);
+  @include lineHeight(16, 32);
+  margin-top: rem(22);
+}

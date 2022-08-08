@@ -1,0 +1,26 @@
+@use "../../global/" as *;
+
+.p-drawer {
+  background-image: url(../img/bg/bg01.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateX(105%);
+  transition: transform $duration;
+}
+
+.p-drawer.is-open {
+  transform: translateX(0);
+}
+
+.p-drawer__scroll {
+  height: 100%;
+  overflow-y: auto;
+  padding: rem(100) 0;
+  width: 100%;
+}
+
+.p-drawer__button-wrapper {
+  margin-top: rem(84);
+  text-align: center;
+}

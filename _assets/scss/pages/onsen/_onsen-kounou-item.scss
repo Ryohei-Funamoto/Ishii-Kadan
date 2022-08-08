@@ -1,0 +1,17 @@
+@use "../../global/" as *;
+
+.onsen-kounou-item__header,
+.onsen-kounou-item__description {
+  font-size: rem(15);
+  @include lineHeight(15, 32);
+  padding: rem(16) 0;
+}
+
+.onsen-kounou-item__header {
+  width: rem(88);
+  text-align: left;
+
+  @include mq('md') {
+    width: rem(220);
+  }
+}

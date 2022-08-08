@@ -1,0 +1,10 @@
+@use "../../global/" as *;
+
+.p-breadcrumb {
+  font-size: rem(16);
+  @include lineHeight(16, 32);
+}
+
+.p-breadcrumb a {
+  color: $color-text;
+}

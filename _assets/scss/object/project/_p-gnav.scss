@@ -1,0 +1,55 @@
+@use "../../global/" as *;
+
+.p-gnav {
+  display: none;
+
+  @include mq('md') {
+    display: block;
+  }
+}
+
+.p-gnav__items {
+  display: flex;
+  height: inherit;
+}
+
+.p-gnav__items>li {
+  font-size: rem(16);
+  font-weight: $extra-bold;
+  height: inherit;
+}
+
+.p-gnav__items>li>a {
+  align-items: center;
+  color: $color-text02;
+  display: flex;
+  height: inherit;
+  padding: 0 rem(15);
+  position: relative;
+}
+
+.p-gnav__items>li>a::after {
+  background-color: $color-main-accent;
+  bottom: 35%;
+  content: '';
+  display: block;
+  height: rem(2);
+  left: 50%;
+  position: absolute;
+  transform-origin: right;
+  transform: translateX(-50%) scaleX(0);
+  transition: transform $duration;
+  width: calc(100% - #{rem(30)});
+}
+
+.p-gnav__items>li>a:focus::after,
+.p-gnav__items>li>a:hover::after {
+  @include mq('hover-pc') {
+    transform: translateX(-50%) scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.p-header--sub .p-gnav__items>li>a {
+  color: $color-text;
+}

@@ -1,0 +1,20 @@
+@use "../../global/" as *;
+
+.home-access-info__item:nth-child(n + 2) {
+  margin-top: rem(8);
+}
+
+.home-access-info__term {
+  font-size: rem(16);
+  font-weight: $extra-bold;
+  @include lineHeight(16, 32);
+}
+
+.home-access-info__description {
+  font-size: rem(16);
+  @include lineHeight(16, 32);
+  
+  @include mq('md') {
+    margin-top: rem(8);
+  }
+}

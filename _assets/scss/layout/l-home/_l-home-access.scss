@@ -1,0 +1,9 @@
+@use "../../global/" as *;
+
+.l-home-access {
+  padding: rem(48) 0 rem(88);
+
+  @include mq('md') {
+    padding: rem(60) 0 rem(110);
+  }
+}

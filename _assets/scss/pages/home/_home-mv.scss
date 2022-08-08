@@ -1,0 +1,59 @@
+@use "sass:color";
+@use "sass:math";
+@use "../../global/" as *;
+
+.home-mv {
+  position: relative;
+}
+
+.home-mv::after {
+  background-color: color.adjust($color-black, $alpha: -0.8);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: $layer-default;
+}
+
+.home-mv__slider {
+  height: 100%;
+  width: 100%;
+}
+
+.home-mv__title {
+  color: $color-white;
+  font-size: rem(24);
+  font-weight: $extra-bold;
+  letter-spacing: math.div(12, 24) * 1em;
+  @include lineHeight(24, 32);
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  z-index: $layer-up;
+  
+  @include mq('md') {
+    font-size: rem(34);
+    letter-spacing: math.div(8, 34) * 1em;
+    @include lineHeight(34, 42);
+    right: math.div(508, 1920) * 100%;
+    top: math.div(362, 1079) * 100%;
+    transform: none;
+  }
+}
+
+.home-mv__title>span {
+  display: block;
+}
+
+.home-mv__title>span:nth-child(1) {
+  margin-left: rem(23);
+
+  @include mq('md') {
+    margin-left: rem(51);
+  }
+}

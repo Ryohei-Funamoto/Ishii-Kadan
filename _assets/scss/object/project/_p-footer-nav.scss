@@ -1,0 +1,29 @@
+@use "../../global/" as *;
+
+.p-footer-nav__items {
+  margin: 0 auto;
+  writing-mode: vertical-rl;
+}
+
+.p-footer-nav__items>li {
+  font-size: rem(16);
+  letter-spacing: 1em;
+  
+  @include mq('md') {
+    font-size: rem(18);
+  }
+}
+
+.p-footer-nav__items>li>a {
+  color: $color-text;
+  display: block;
+  padding: 0 rem(17);
+  transition: opacity $duration;
+}
+
+.p-footer-nav__items>li>a:focus,
+.p-footer-nav__items>li>a:hover {
+  @include mq('hover-pc') {
+    opacity: $opacity;
+  }
+}

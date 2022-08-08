@@ -1,0 +1,33 @@
+@use "../../global/" as *;
+
+.p-footer-content {
+  background-image: url(../img/bg/bg03.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.p-footer-content__logo {
+  margin: rem(60) auto 0;
+  width: rem(145);
+
+  @include mq('md') {
+    margin: rem(96) auto 0;
+  }
+}
+
+.p-footer-content__address {
+  font-size: rem(16);
+  margin-top: rem(45);
+  text-align: center;
+  
+  @include mq('md') {
+    margin-top: rem(72);
+  }
+}
+
+.p-footer-content__tel {
+  font-size: rem(16);
+  margin-top: rem(15);
+  text-align: center;
+}

@@ -1,0 +1,11 @@
+@use "../../global/" as *;
+
+.p-footer {
+  background-color: $color-black;
+}
+
+.p-footer__copy {
+  color: $color-text02;
+  font-size: rem(12);
+  text-align: center;
+}

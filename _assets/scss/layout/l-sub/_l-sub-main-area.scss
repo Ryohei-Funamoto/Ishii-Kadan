@@ -1,0 +1,17 @@
+@use "../../global/" as *;
+
+.l-sub-main-area {
+  padding-bottom: rem(100);
+
+  @include mq('md') {
+    padding-bottom: rem(150);
+  }
+}
+
+.l-sub-main-area--onsen {
+  padding-bottom: rem(64);
+
+  @include mq('md') {
+    padding-bottom: rem(96);
+  }
+}

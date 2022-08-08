@@ -1,0 +1,19 @@
+@use "../../global/" as *;
+
+/* テキストボックスの独自スタイル */
+.p-textbox {
+  display: block;
+}
+
+.p-textbox input[type="text"],
+.p-textbox input[type="email"],
+.p-textbox textarea {
+  background-color: $color-white;
+  border: rem(1) solid $color-gray-light02;
+  font-size: rem(14);
+  padding: rem(8) rem(10);
+}
+
+.p-textbox textarea {
+  height: rem(200);
+}

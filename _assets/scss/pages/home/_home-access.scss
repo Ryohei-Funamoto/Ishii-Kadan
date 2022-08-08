@@ -1,0 +1,55 @@
+@use "../../global/" as *;
+
+.home-access {
+  background-image: url(../img/bg/bg01.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.home-access__container {
+  @include mq('md') {
+    max-width: rem(1434 + strip-unit($padding-pc) * 2);
+  }
+}
+
+.home-access__media {
+  margin-top: rem(48);
+
+  @include mq('md') {
+    margin-top: rem(66);
+  }
+}
+
+.home-access__map {
+  margin: rem(48) calc(50% - 50vw) 0;
+  position: relative;
+  width: 100vw;
+  
+  @include mq('md') {
+    margin: rem(69) auto 0;
+    max-width: rem(792);
+    width: 100%;
+  }
+}
+
+.home-access__map::before {
+  content: '';
+  display: block;
+  @include paddingTopHack(375, 235);
+
+  @include mq('md') {
+    @include paddingTopHack(792, 592);
+  }
+}
+
+.home-access__map>iframe {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

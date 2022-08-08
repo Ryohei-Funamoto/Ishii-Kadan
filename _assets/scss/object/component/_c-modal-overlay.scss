@@ -1,0 +1,14 @@
+@use "sass:color";
+@use "../../global/" as *;
+
+.c-modal-overlay {
+  background-color: color.adjust($color-gray-dark, $alpha: -0.3);
+  opacity: 0;
+  transition: opacity $duration, visibility $duration;
+  visibility: hidden;
+}
+
+.c-modal-overlay.is-show {
+  opacity: 1;
+  visibility: visible;
+}

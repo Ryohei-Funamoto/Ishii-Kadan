@@ -1,0 +1,22 @@
+@use "../../global/" as *;
+
+.p-section-title {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.p-section-title>img {
+  width: rem(40);
+}
+
+.p-section-title>span {
+  display: block;
+  font-size: rem(24);
+  font-weight: $medium;
+  margin-top: rem(11);
+  
+  @include mq('md') {
+    font-size: rem(36);
+  }
+}

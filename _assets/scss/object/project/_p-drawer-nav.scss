@@ -1,0 +1,17 @@
+@use "../../global/" as *;
+
+.p-drawer-nav__items {
+  margin: 0 auto;
+  writing-mode: vertical-rl;
+}
+
+.p-drawer-nav__items>li {
+  font-size: rem(18);
+  letter-spacing: 1em;
+}
+
+.p-drawer-nav__items>li>a {
+  color: $color-text;
+  display: block;
+  padding: 0 rem(16);
+}

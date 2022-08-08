@@ -1,0 +1,134 @@
+@use "sass:color";
+@use "sass:math";
+@use "../../global/" as *;
+
+.home-features-media {
+  @include mq('lg') {
+    align-items: flex-start;
+    display: flex;
+  }
+}
+
+.home-features-media:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.home-features-media__image {
+  position: relative;
+  width: 80%;
+  z-index: $layer-up;
+  
+  @include mq('lg') {
+    flex-shrink: 0;
+    width: math.div(1050, 1920) * 100%;
+  }
+}
+
+.home-features-media:nth-child(even) .home-features-media__image {
+  margin-left: auto;
+
+  @include mq('lg') {
+    margin-left: 0;
+  }
+}
+
+.home-features-media__image::before {
+  content: '';
+  display: block;
+  @include paddingTopHack(300, 360);
+
+  @include mq('md') {
+    @include paddingTopHack(768, 384);
+  }
+
+  @include mq('lg') {
+    @include paddingTopHack(1050, 545);
+  }
+}
+
+.home-features-media__image>img {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.home-features-media__extend-bg {
+  background-color: $color-main-accent;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.home-features-media__body {
+  background-image: url(../img/bg/bg01.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: rem(-120);
+  max-width: rem(540);
+  padding: rem(152) rem(16) rem(32);
+  width: 80%;
+  
+  @include mq('md') {
+    padding: rem(152) rem(32) rem(32);
+  }
+
+  @include mq('lg') {
+    margin-top: 0;
+    max-width: none;
+    background-image: none;
+    padding: rem(32) 0 0;
+    position: static;
+    width: auto;
+  }
+}
+
+.home-features-media:nth-child(odd) .home-features-media__body {
+  margin-left: auto;
+
+  @include mq('lg') {
+    margin-left: math.div(137, 1920) * 100%;
+    padding-right: rem(strip-unit($padding-pc));
+  }
+}
+
+.home-features-media:nth-child(even) .home-features-media__body {
+  @include mq('lg') {
+    margin-right: math.div(137, 1920) * 100%;
+    padding-left: rem(strip-unit($padding-pc));
+  }
+}
+
+.home-features-media__lead {
+  font-size: rem(22);
+  @include lineHeight(22, 34);
+  
+  @include mq('md') {
+    font-size: rem(36);
+    @include lineHeight(36, 62);
+  }
+}
+
+.home-features-media__description {
+  font-size: rem(16);
+  @include lineHeight(16, 32);
+  margin-top: rem(32);
+  
+  @include mq('md') {
+    margin-top: rem(49);
+  }
+}
+
+.home-features-media__button-wrapper {
+  margin-top: rem(48);
+  
+  @include mq('md') {
+    margin-top: rem(67);
+  }
+}

@@ -1,0 +1,61 @@
+@use "../../global/" as *;
+
+/* チェックボックスの独自スタイル */
+.p-checkbox {
+  display: block;
+  font-size: 0; /* inline-blockの隙間防止 */
+}
+
+.p-checkbox > span {
+  display: inline-block;
+}
+
+.p-checkbox input[type="checkbox"] {
+  height: rem(24);
+  width: rem(24);
+}
+
+.p-checkbox input[type="checkbox"] + span {
+  cursor: pointer;
+  display: inline-block;
+  font-size: rem(16);
+  margin: 0 rem(24) rem(16) 0;
+  padding-left: rem(32);
+  position: relative;
+}
+
+.p-checkbox--agreement input[type="checkbox"] + span {
+  margin: 0;
+}
+
+.p-checkbox input[type="checkbox"] + span::before {
+  background-color: #FFFFFF;
+  border: rem(1) solid #888888;
+  content: "";
+  height: rem(24);
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: rem(24);
+}
+
+.p-checkbox input[type="checkbox"] + span::after {
+  border-bottom: rem(3) solid #3D98B4;
+  border-left: rem(3) solid #3D98B4;
+  content: "";
+  height: rem(10);
+  left: rem(4);
+  opacity: 0;
+  position: absolute;
+  top: 20%;
+  transform: rotate(-45deg);
+  transition: opacity 0.3s, visibility 0.3s;
+  visibility: hidden;
+  width: rem(16);
+}
+
+.p-checkbox input[type="checkbox"]:checked + span::after {
+  opacity: 1;
+  visibility: visible;
+}

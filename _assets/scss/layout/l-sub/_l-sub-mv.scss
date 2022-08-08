@@ -1,0 +1,10 @@
+@use "../../global/" as *;
+
+.l-sub-mv {
+  height: rem(300);
+  width: 100%;
+  
+  @include mq('md') {
+    height: rem(500);
+  }
+}

@@ -1,0 +1,56 @@
+@use "../../global/" as *;
+
+.home-news__tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: rem(38);
+  
+  @include mq('md') {
+    margin-top: rem(46);
+  }
+}
+
+.home-news__tab {
+  cursor: pointer;
+  transition: opacity $duration;
+}
+
+.home-news__tab:focus,
+.home-news__tab:hover {
+  opacity: $opacity;
+}
+
+.home-news__tab.is-active {
+  text-decoration: underline;
+}
+
+.home-news__tab:nth-child(n + 2) {
+  margin-left: rem(53);
+}
+
+.home-news__panel {
+  display: none;
+}
+
+.home-news__panel.is-show {
+  animation-duration: 1.0s;
+  animation-name: fadeIn;
+  animation-timing-function: ease-in-out;
+  margin-top: rem(38);
+  display: block;
+  
+  @include mq('md') {
+    margin-top: rem(49);
+  }
+}
+
+.home-news__items {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: rem(20);
+  
+  @include mq('md') {
+    column-gap: rem(56);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,12 @@
+@use "../../global/" as *;
+
+.onsen-kounou-table {
+  border-bottom: rem(1) solid $color-gray-light02;
+  border-top: rem(1) solid $color-gray-light02;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.onsen-kounou-table__item:nth-child(n + 2) {
+  border-top: rem(1) solid $color-gray-light02;
+}

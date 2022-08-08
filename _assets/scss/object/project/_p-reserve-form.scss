@@ -1,0 +1,10 @@
+@use "../../global/" as *;
+
+.p-reserve-form__item:nth-child(n + 2) {
+  margin-top: rem(8);
+}
+
+.p-reserve-form__button-wrapper {
+  margin-top: rem(64);
+  text-align: center;
+}

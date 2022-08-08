@@ -1,0 +1,24 @@
+@use "../../global/" as *;
+
+input[type="button"].c-button-submit {
+  background-color: $color-white;
+  border: rem(1) solid $color-gray-dark;
+  color: $color-text;
+  display: inline-block;
+  font-size: rem(16);
+  font-weight: $medium;
+  line-height: 1;
+  max-width: rem(200);
+  overflow: hidden;
+  padding: rem(12) rem(18);
+  text-align: center;
+  transition: background-color $duration, color $duration;
+  width: 100%;
+  z-index: $layer-default;
+}
+
+input[type="button"].c-button-submit:focus,
+input[type="button"].c-button-submit:hover {
+  background-color: $color-gray-dark;
+  color: $color-text02;
+}

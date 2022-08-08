@@ -1,0 +1,247 @@
+<% let title=(pageId==='home' ) ? jsonData.siteInfo.name : jsonData.pages[pageId].name + ' - ' +
+  jsonData.siteInfo.name%>
+  <% let description=jsonData.pages[pageId].description %>
+    <!DOCTYPE html>
+    <html lang="ja">
+
+    <head>
+      <meta charset="utf-8">
+      <meta name="format-detection" content="telephone=no">
+      <meta name="viewport" content="width=device-width">
+      <link rel="apple-touch-icon" href="/img/common/apple-touch-icon.png">
+
+      <title>
+        <%= title %>
+      </title>
+      <meta name="description" content="<%= description %>">
+
+      <meta property="og:title" content="<%= title %>">
+      <meta property="og:description" content="<%= description %>">
+      <meta property="og:url" content="<%= jsonData.siteInfo.siteUrl + jsonData.pages[pageId].slug %>">
+      <meta property="og:type" content="<%= jsonData.pages[pageId].type %> ">
+      <meta property="og:local" content="ja_JP">
+      <meta property="og:image" content="/common/og-image.jpg">
+      <meta property="og:site_name" content="<%= jsonData.siteInfo.siteUrl %> ">
+
+      <!-- クローラー -->
+      <meta name="robots" content="noindex">
+
+      <!-- Google Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+
+      <!-- font awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- flatpickr -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+      <!-- css -->
+      <link rel="stylesheet" type="text/css" href="/css/style.css">
+      <% if (pageId==='home' ) { %>
+        <link rel="stylesheet" href="/css/home.css">
+        <% } else if (pageId==='oheya' ) { %>
+          <link rel="stylesheet" href="/css/sub.css">
+          <link rel="stylesheet" href="/css/oheya.css">
+          <% } else if (pageId==='menu' ) { %>
+            <link rel="stylesheet" href="/css/sub.css">
+            <link rel="stylesheet" href="/css/menu.css">
+            <% } else if (pageId==='onsen' ) { %>
+              <link rel="stylesheet" href="/css/sub.css">
+              <link rel="stylesheet" href="/css/onsen.css">
+              <% } %>
+    </head>
+
+    <body>
+      <% if (pageId==='home' ) { %>
+        <header class="l-header p-header js-header">
+          <div class="l-container p-header__container">
+            <div class="p-header__inner">
+              <div class="p-header__left">
+                <h1 class="p-header__logo c-logo">
+                  <img src="/img/common/home-header-logo.png" alt="石井花壇">
+                </h1><!-- /.p-header__logo c-logo -->
+
+                <nav class="p-header__nav p-gnav">
+                  <ul class="p-gnav__items">
+                    <li><a href="<%= jsonData.pages.oheya.slug %>">
+                        <%= jsonData.pages.oheya.name %>
+                      </a></li>
+                    <li><a href="<%= jsonData.pages.menu.slug %>">
+                        <%= jsonData.pages.menu.name %>
+                      </a></li>
+                    <li><a href="<%= jsonData.pages.onsen.slug %>">
+                        <%= jsonData.pages.onsen.name %>
+                      </a></li>
+                  </ul><!-- /.p-gnav__items -->
+                </nav><!-- /.p-header__nav p-gnav -->
+              </div><!-- /.p-header__left -->
+
+              <div class="p-header__right">
+                <button type="button" class="p-header__button c-button-reserve js-modal-open"
+                  data-target="for-modal">宿泊予約</button>
+
+                <button type="button" class="p-header__hamburger p-hamburger js-hamburger">
+                  <span class="p-hamburger__bars">
+                    <span class="p-hamburger__bar"></span>
+                    <span class="p-hamburger__bar"></span>
+                    <span class="p-hamburger__bar"></span>
+                  </span><!-- /.p-hamburger__bars -->
+                </button><!-- /.p-header__hamburger p-hamburger -->
+              </div><!-- /.p-header__right -->
+
+              <div class="p-header__drawer p-drawer js-drawer">
+                <div class="p-drawer__scroll">
+                  <nav class="p-drawer__nav p-drawer-nav">
+                    <ul class="p-drawer-nav__items">
+                      <li><a href="<%= jsonData.pages.oheya.slug %>">
+                          <%= jsonData.pages.oheya.name %>
+                        </a></li>
+                      <li><a href="<%= jsonData.pages.menu.slug %>">
+                          <%= jsonData.pages.menu.name %>
+                        </a></li>
+                      <li><a href="<%= jsonData.pages.onsen.slug %>">
+                          <%= jsonData.pages.onsen.name %>
+                        </a></li>
+                    </ul><!-- /.p-drawer-nav__items -->
+                  </nav><!-- /.p-drawer__nav p-drawer-nav -->
+
+                  <div class="p-drawer__button-wrapper">
+                    <button class="p-drawer__button c-button-reserve js-modal-open"
+                      data-target="for-modal">宿泊予約</button>
+                  </div><!-- /.p-drawer__button-wrapper -->
+                </div><!-- /.p-drawer__scroll -->
+              </div><!-- /.p-header__drawer p-drawer -->
+            </div><!-- /.p-header__inner -->
+          </div><!-- /.l-container p-header__container -->
+        </header><!-- /.l-header p-header -->
+
+        <div class="l-header l-header--sub p-header p-header--sub js-header-sub">
+          <div class="l-container p-header__container">
+            <div class="p-header__inner">
+              <div class="p-header__left">
+                <p class="p-header__logo c-logo">
+                  <img src="/img/common/sub-header-logo.png" alt="石井花壇">
+                </p><!-- /.p-header__logo c-logo -->
+
+                <nav class="p-header__nav p-gnav">
+                  <ul class="p-gnav__items">
+                    <li><a href="<%= jsonData.pages.oheya.slug %>">
+                        <%= jsonData.pages.oheya.name %>
+                      </a></li>
+                    <li><a href="<%= jsonData.pages.menu.slug %>">
+                        <%= jsonData.pages.menu.name %>
+                      </a></li>
+                    <li><a href="<%= jsonData.pages.onsen.slug %>">
+                        <%= jsonData.pages.onsen.name %>
+                      </a></li>
+                  </ul><!-- /.p-gnav__items -->
+                </nav><!-- /.p-header__nav p-gnav -->
+              </div><!-- /.p-header__left -->
+
+              <div class="p-header__right">
+                <button type="button" class="p-header__button c-button-reserve js-modal-open"
+                  data-target="for-modal">宿泊予約</button>
+
+                <button type="button" class="p-header__hamburger p-hamburger js-hamburger-sub">
+                  <span class="p-hamburger__bars">
+                    <span class="p-hamburger__bar"></span>
+                    <span class="p-hamburger__bar"></span>
+                    <span class="p-hamburger__bar"></span>
+                  </span><!-- /.p-hamburger__bars -->
+                </button><!-- /.p-header__hamburger p-hamburger -->
+              </div><!-- /.p-header__right -->
+
+              <div class="p-header__drawer p-drawer js-drawer-sub">
+                <div class="p-drawer__scroll">
+                  <nav class="p-drawer__nav p-drawer-nav">
+                    <ul class="p-drawer-nav__items">
+                      <li><a href="<%= jsonData.pages.oheya.slug %>">
+                          <%= jsonData.pages.oheya.name %>
+                        </a></li>
+                      <li><a href="<%= jsonData.pages.menu.slug %>">
+                          <%= jsonData.pages.menu.name %>
+                        </a></li>
+                      <li><a href="<%= jsonData.pages.onsen.slug %>">
+                          <%= jsonData.pages.onsen.name %>
+                        </a></li>
+                    </ul><!-- /.p-drawer-nav__items -->
+                  </nav><!-- /.p-drawer__nav p-drawer-nav -->
+
+                  <div class="p-drawer__button-wrapper">
+                    <button class="p-drawer__button c-button-reserve js-modal-open"
+                      data-target="for-modal">宿泊予約</button>
+                  </div><!-- /.p-drawer__button-wrapper -->
+                </div><!-- /.p-drawer__scroll -->
+              </div><!-- /.p-header__drawer p-drawer -->
+            </div><!-- /.p-header__inner -->
+          </div><!-- /.l-container p-header__container -->
+        </div><!-- /.l-header p-header -->
+        <% } else { %>
+          <header class="l-header l-header--sub p-header p-header--sub">
+            <div class="l-container p-header__container">
+              <div class="p-header__inner">
+                <div class="p-header__left">
+                  <p class="p-header__logo c-logo">
+                    <a href="<%= jsonData.pages.home.slug %>">
+                      <img src="/img/common/sub-header-logo.png" alt="石井花壇">
+                    </a>
+                  </p><!-- /.p-header__logo c-logo -->
+
+                  <nav class="p-header__nav p-gnav">
+                    <ul class="p-gnav__items">
+                      <li><a href="<%= jsonData.pages.oheya.slug %>">
+                          <%= jsonData.pages.oheya.name %>
+                        </a></li>
+                      <li><a href="<%= jsonData.pages.menu.slug %>">
+                          <%= jsonData.pages.menu.name %>
+                        </a></li>
+                      <li><a href="<%= jsonData.pages.onsen.slug %>">
+                          <%= jsonData.pages.onsen.name %>
+                        </a></li>
+                    </ul><!-- /.p-gnav__items -->
+                  </nav><!-- /.p-header__nav p-gnav -->
+                </div><!-- /.p-header__left -->
+
+                <div class="p-header__right">
+                  <button type="button" class="p-header__button c-button-reserve js-modal-open"
+                    data-target="for-modal">宿泊予約</button>
+
+                  <button type="button" class="p-header__hamburger p-hamburger js-hamburger">
+                    <span class="p-hamburger__bars">
+                      <span class="p-hamburger__bar"></span>
+                      <span class="p-hamburger__bar"></span>
+                      <span class="p-hamburger__bar"></span>
+                    </span><!-- /.p-hamburger__bars -->
+                  </button><!-- /.p-header__hamburger p-hamburger -->
+                </div><!-- /.p-header__right -->
+
+                <div class="p-header__drawer p-drawer js-drawer">
+                  <div class="p-drawer__scroll">
+                    <nav class="p-drawer__nav p-drawer-nav">
+                      <ul class="p-drawer-nav__items">
+                        <li><a href="<%= jsonData.pages.oheya.slug %>">
+                            <%= jsonData.pages.oheya.name %>
+                          </a></li>
+                        <li><a href="<%= jsonData.pages.menu.slug %>">
+                            <%= jsonData.pages.menu.name %>
+                          </a></li>
+                        <li><a href="<%= jsonData.pages.onsen.slug %>">
+                            <%= jsonData.pages.onsen.name %>
+                          </a></li>
+                      </ul><!-- /.p-drawer-nav__items -->
+                    </nav><!-- /.p-drawer__nav p-drawer-nav -->
+
+                    <div class="p-drawer__button-wrapper">
+                      <button class="p-drawer__button c-button-reserve js-modal-open"
+                        data-target="for-modal">宿泊予約</button>
+                    </div><!-- /.p-drawer__button-wrapper -->
+                  </div><!-- /.p-drawer__scroll -->
+                </div><!-- /.p-header__drawer p-drawer -->
+              </div><!-- /.p-header__inner -->
+            </div><!-- /.l-container p-header__container -->
+          </header><!-- /.l-header p-header -->
+          <% } %>

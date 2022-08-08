@@ -1,0 +1,50 @@
+@use "../../global/" as *;
+
+.sub-main-area {
+  overflow: hidden;
+}
+
+.sub-main-area__description {
+  font-size: rem(16);
+  @include lineHeight(16, 32);
+  margin-top: rem(63);
+  text-align: center;
+
+  @include mq('md') {
+    margin-top: rem(98);
+  }
+}
+
+.sub-main-area__features {
+  margin-top: rem(52);
+
+  @include mq('md') {
+    margin-top: rem(78);
+  }
+}
+
+.sub-main-area__feature {
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
+
+  @include mq('md') {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.sub-main-area__feature:nth-child(n + 2) {
+  margin-top: rem(56);
+
+  @include mq('md') {
+    margin-top: rem(84);
+  }
+}
+
+.sub-main-area__footer {
+  margin-top: rem(106);
+  
+  @include mq('md') {
+    margin-top: rem(156);
+  }
+}

@@ -1,0 +1,21 @@
+@use "../../global/" as *;
+
+.l-home__features {
+  margin-top: rem(84);
+  
+  @include mq('md') {
+    margin-top: rem(106);
+  }
+}
+
+.l-home__recommended {
+  margin-top: rem(78);
+}
+
+.l-home__news {
+  margin-top: rem(60);
+}
+
+.l-home__access {
+  margin-top: rem(60);
+}

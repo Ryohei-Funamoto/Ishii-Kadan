@@ -1,0 +1,61 @@
+<% let pageId='menu' ; %>
+
+  <%- include('../common/_header', {pageId: pageId}) %>
+
+    <% console.log(jsonData) %>
+      <main class="l-sub">
+        <div class="l-sub__mv l-sub-mv sub-mv menu-mv">
+          <h1 class="sub-mv__title menu-mv__title">
+            <%= jsonData.pages[pageId].name; %>
+          </h1>
+        </div><!-- /.l-sub__mv l-sub-mv menu-mv -->
+
+        <div class="l-sub__main-area l-sub-main-area sub-main-area menu-main-area">
+          <div class="l-container sub-main-area__container menu-main-area__container">
+            <div class="l-breadcrumb p-breadcrumb">
+              <span><a href="<%= jsonData.pages.home.slug; %>">トップ</a></span>
+              &ensp;&gt;&ensp;
+              <span>
+                <%= jsonData.pages[pageId].name %>
+              </span>
+            </div><!-- /.l-breadcrumb p-breadcrumb -->
+
+            <p class="sub-main-area__description menu-main-area__description">
+              地元熱海の市場で仕入れた食材のみを使った食材をふんだんに使い、<br>大将の技が光る「熱海料理」<br>四季ごと、日ごとに変化する味わいを、どうぞご堪能ください。
+            </p><!-- /.sub-main-area__description menu-main-area__description -->
+
+            <% const subFeatures=[ { imgSrc: '/img/menu/menu01.jpg' , imgAlt: '地元食材にこだわった会席料理' , title: '地元食材にこだわった会席料理'
+              ,
+              description: 'みずみずしくほのかに甘い野菜、新鮮で味に深みがある魚介類、肉類。旬の素材をそのままに生かす、経験に裏打ちされた確かな技。<br>四季ごと、日ごとに変化する味わいを、どうぞご堪能ください。'
+              , supplement: '' }, { imgSrc: '/img/menu/menu02.jpg' , imgAlt: '熱海の漁港で目利きの品を' , title: '熱海の漁港で目利きの品を' ,
+              description: '石井花壇でお出しする料理はすべて料理長である大将の目利きで、熱海の魚市場でその日のうちに仕入れたものを使用しております。<br>日本海の宝玉を十分にお楽しみください。' ,
+              supplement: '' }, { imgSrc: '/img/menu/menu03.jpg' , imgAlt: '食材が一流、職人も一流' , title: '食材が一流、職人も一流' ,
+              description: '石井花壇の料理人は料亭で20年経験を積んだものばかり。<br>その時の最も旬な食材を、最高の調理でお届けします。<br>また、お料理への細かいご要望にもお答えできますので、お気軽にお申し付けください。'
+              , supplement: '' } ] %>
+              <ul class="sub-main-area__features menu-main-area__features">
+                <% for (let i in subFeatures) { %>
+                  <li class="sub-main-area__feature menu-main-area__feature sub-features-media">
+                    <figure class="sub-features-media__image">
+                      <img src="<%- subFeatures[i].imgSrc; %>" alt="<%- subFeatures[i].imgAlt; %>" />
+                    </figure><!-- /.sub-features-media__image -->
+                    <div class="sub-features-media__body">
+                      <h3 class="sub-features-media__title">
+                        <%- subFeatures[i].title; %>
+                      </h3>
+                      <p class="sub-features-media__description">
+                        <%- subFeatures[i].description; %>
+                      </p>
+                      <% if (subFeatures[i].supplement) { %>
+                        <p class="sub-features-media__supplement">
+                          <%- subFeatures[i].supplement; %>
+                        </p>
+                        <% } %>
+                    </div><!-- /.sub-features-media__body -->
+                  </li><!-- /.sub-main-area__feature menu-main-area__feature sub-features-media -->
+                  <% } %>
+              </ul><!-- /.sub-main-area__features menu-main-area__features -->
+          </div><!-- /.l-container sub-main-area__container menu-main-area__container -->
+        </div><!-- /.l-sub__main-area sub-main-area menu-main-area -->
+      </main><!-- /.l-sub -->
+
+      <%- include('../common/_footer', {pageId: pageId}) %>

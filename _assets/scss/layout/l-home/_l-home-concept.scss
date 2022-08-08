@@ -1,0 +1,9 @@
+@use "../../global/" as *;
+
+.l-home-concept {
+  padding: rem(56) 0 rem(80);
+  
+  @include mq('md') {
+    padding: rem(64) 0 rem(93);
+  }
+}

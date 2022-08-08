@@ -1,0 +1,58 @@
+@use "sass:math";
+@use "../../global/" as *;
+
+.home-access-media {
+  @include mq('md') {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.home-access-media__image {
+  position: relative;
+  
+  @include mq('md') {
+    flex-shrink: 0;
+    width: math.div(656, 1434) * 100%;
+  }
+}
+
+.home-access-media__image::before {
+  content: '';
+  display: block;
+  @include paddingTopHack(335, 221);
+  
+  @include mq('md') {
+    @include paddingTopHack(656, 370);
+  }
+}
+
+.home-access-media__image>img {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.home-access-media__body {
+  margin-top: rem(32);
+
+  @include mq('md') {
+    margin-left: math.div(83, 1434) * 100%;
+    margin-top: 0;
+    width: math.div(568, 1434) * 100%;
+  }
+}
+
+.home-access-media__supplement {
+  font-size: rem(16);
+  @include lineHeight(16, 32);
+  
+  @include mq('md') {
+    margin-top: rem(8);
+  }
+}

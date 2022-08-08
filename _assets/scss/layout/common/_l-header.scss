@@ -1,0 +1,18 @@
+@use "../../global/" as *;
+
+.l-header {
+  height: $header-height-sp;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: $layer-header;
+  
+  @include mq('md') {
+    height: $header-height-pc;
+  }
+}
+
+.l-header--sub {
+  position: fixed;
+}

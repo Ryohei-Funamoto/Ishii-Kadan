@@ -1,0 +1,10 @@
+@use "../../global/" as *;
+
+.p-input-group__title {
+  font-size: rem(16);
+  @include lineHeight(16, 27);
+}
+
+.p-input-group__field {
+  margin-top: rem(8);
+}

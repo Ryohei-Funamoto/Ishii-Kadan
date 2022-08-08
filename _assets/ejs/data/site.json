@@ -1,0 +1,32 @@
+{
+  "siteInfo": {
+    "name": "石井花壇 | 温海温泉旅館【公式サイト】",
+    "siteUrl": "サイトのドメイン"
+  },
+  "pages": {
+    "home": {
+      "name": "ホームページ",
+      "description": "日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。伝統的「和」の息づく空間で、至極のひとときをお過ごしください。",
+      "type": "website",
+      "slug": "/"
+    },
+    "oheya": {
+      "name": "お部屋",
+      "description": "",
+      "type": "article",
+      "slug": "/oheya/"
+    },
+    "menu": {
+      "name": "お料理",
+      "description": "",
+      "type": "article",
+      "slug": "/menu/"
+    },
+    "onsen": {
+      "name": "温泉",
+      "description": "",
+      "type": "article",
+      "slug": "/onsen/"
+    }
+  }
+}

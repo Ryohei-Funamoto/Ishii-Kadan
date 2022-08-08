@@ -1,0 +1,25 @@
+@use "../../global/" as *;
+
+.home-recommended {
+  background-image: url(../img/bg/bg02.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-recommended__items {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: rem(48);
+  row-gap: rem(30);
+  
+  @include mq('md') {
+    column-gap: rem(94);
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: rem(66);
+  }
+}
+
+.home-recommended__item {
+  display: flex;
+}

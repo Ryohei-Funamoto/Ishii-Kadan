@@ -1,0 +1,123 @@
+<div class="l-footer-content p-footer-content">
+  <div class="l-container p-footer-content__container">
+    <nav class="p-footer-content__nav p-footer-nav">
+      <ul class="p-footer-nav__items">
+        <li><a href="<%= jsonData.pages.oheya.slug %>">
+            <%= jsonData.pages.oheya.name %>
+          </a></li>
+        <li><a href="<%= jsonData.pages.menu.slug %>">
+            <%= jsonData.pages.menu.name %>
+          </a></li>
+        <li><a href="<%= jsonData.pages.onsen.slug %>">
+            <%= jsonData.pages.onsen.name %>
+          </a></li>
+      </ul><!-- /.p-footer-nav__items -->
+    </nav><!-- /.p-footer-content__nav p-footer-nav -->
+
+    <div class="p-footer-content__logo">
+      <img src="/img/common/footer-logo.png" alt="石井花壇">
+    </div><!-- /.p-footer-content__logo -->
+
+    <p class="p-footer-content__address">
+      〒000-0000&emsp;山形県鶴岡市xxxxxxxxxxx
+    </p><!-- /.p-footer-content__address -->
+
+    <p class="p-footer-content__tel">
+      TEL.000-0000-0000&emsp;FAX.00-0000-0000
+    </p><!-- /.p-footer-content__tel -->
+  </div><!-- /.l-container p-footer-content__container -->
+</div><!-- /.l-footer-content p-footer-content -->
+
+<footer class="l-footer p-footer">
+  <div class="l-container p-footer__container">
+    <p class="p-footer__copy">Copyright&nbsp;&copy;&nbsp;石井花壇&nbsp;All&nbsp;Rights&nbsp;Reserved.</p>
+  </div><!-- /.l-container p-footer__container -->
+</footer><!-- /.l-footer p-footer -->
+
+<div class="l-modal-reserve p-modal-reserve for-modal">
+  <div class="p-modal-reserve__title">宿泊予約</div>
+
+  <div class="p-modal-reserve__close js-modal-close" data-target="for-modal"></div>
+
+  <div class="p-modal-reserve__form p-reserve-form">
+    <form action="/php/mailform.php" method="post" id="mail_form">
+      <dl class="p-reserve-form__items">
+        <div class="p-reserve-form__item p-input-group">
+          <dt class="p-input-group__title">お名前</dt>
+          <dd class="p-input-group__field required">
+            <span class="p-textbox">
+              <span>
+                <input type="text" name="your-name" placeholder="例：田中太郎">
+              </span>
+            </span><!-- /.p-textbox -->
+          </dd><!-- /.p-input-group__field -->
+        </div><!-- /.p-reserve-form__item p-input-group -->
+
+        <div class="p-reserve-form__item p-input-group">
+          <dt class="p-input-group__title">メールアドレス</dt>
+          <dd class="p-input-group__field required">
+            <span class="p-textbox">
+              <span>
+                <input type="text" name="your-email" placeholder="例：xxx@example.com">
+              </span>
+            </span><!-- /.p-textbox -->
+          </dd><!-- /.p-input-group__field -->
+        </div><!-- /.p-reserve-form__item p-input-group -->
+
+        <div class="p-reserve-form__item p-input-group">
+          <dt class="p-input-group__title">ご希望プラン（空いているプランのみ表示されます）</dt>
+          <dd class="p-input-group__field required">
+            <span class="p-select">
+              <span>
+                <select name="your-plan" required>
+                  <option value="" selected>プランを選択してください</option>
+                  <option value="【期間限定】海辺の四季旬彩、贅沢美味懐石プラン">【期間限定】海辺の四季旬彩、贅沢美味懐石プラン</option>
+                  <option value="平日に優雅に楽しむ、特別宿泊プラン">平日に優雅に楽しむ、特別宿泊プラン</option>
+                  <option value="絶景貸切露天と個室会席を満喫できるファミリープラン">絶景貸切露天と個室会席を満喫できるファミリープラン</option>
+                </select>
+              </span>
+            </span><!-- /.p-select -->
+          </dd><!-- /.p-input-group__field -->
+        </div><!-- /.p-reserve-form__item p-input-group -->
+
+        <div class="p-reserve-form__item p-input-group">
+          <dt class="p-input-group__title">日時選択</dt>
+          <dd class="p-input-group__field required">
+            <span class="p-textbox">
+              <span>
+                <input type="text" name="your-date" id="js-date" placeholder="日付を選択してください">
+              </span>
+            </span><!-- /.p-textbox -->
+          </dd><!-- /.p-input-group__field -->
+        </div><!-- /.p-reserve-form__item p-input-group -->
+      </dl><!-- /.p-reserve-form__items -->
+
+
+      <p id="form_submit" class="p-reserve-form__button-wrapper">
+        <input type="button" id="form_submit_button" value="送信する" class="p-reserve-form__button c-button-submit" />
+      </p><!-- /.p-reserve-form__button-wrapper -->
+    </form>
+
+    <p class="p-modal-reserve__thanks js-thanks">ご予約ありがとうございます。</p>
+  </div><!-- /.p-modal-reserve__form p-reserve-form -->
+</div><!-- /.l-modal-reserve p-modal-reserve -->
+
+<div class="l-modal-overlay c-modal-overlay for-modal js-modal-close" data-target="for-modal"></div>
+
+<!-- JavaScript -->
+<script src="/js/lib/b_browser_switcher.js"></script>
+<script src="/js/lib/svgxuse.min.js"></script>
+<script src="/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/js/lib/bodyScrollLock.min.js"></script>
+<script src="/js/lib/mailform-js.php"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="/js/common.js"></script>
+<% if (pageId==='home' ) { %>
+  <script src="/js/lib/gsap.min.js"></script>
+  <script src="/js/lib/ScrollTrigger.min.js"></script>
+  <script src="/js/lib/swiper-bundle.min.js"></script>
+  <script src="/js/home.js"></script>
+  <% } %>
+    </body>
+
+    </html>

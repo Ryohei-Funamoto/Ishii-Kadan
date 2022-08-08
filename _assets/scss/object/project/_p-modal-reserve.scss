@@ -1,0 +1,84 @@
+@use "../../global/" as *;
+
+.p-modal-reserve {
+  background-color: $color-white;
+  opacity: 0;
+  padding: rem(30) rem(30) rem(60);
+  transition: opacity $duration, visibility $duration;
+  visibility: hidden;
+
+  @include mq('md') {
+    padding: rem(20) rem(60) rem(90);
+  }
+}
+
+.p-modal-reserve.is-show {
+  animation-timing-function: linear;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.p-modal-reserve__close {
+  cursor: pointer;
+  height: rem(18);
+  position: absolute;
+  right: rem(16);
+  top: rem(14);
+  width: rem(18);
+  
+  @include mq('md') {
+    height: rem(24);
+    right: rem(22);
+    top: rem(20);
+    width: rem(24);
+  }
+}
+
+.p-modal-reserve__close::before,
+.p-modal-reserve__close::after {
+  background-color: $color-gray-dark;
+  content: '';
+  display: block;
+  height: rem(2);
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.p-modal-reserve__close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.p-modal-reserve__close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.p-modal-reserve__title {
+  border-bottom: rem(1) solid $color-gray-light02;
+  font-size: rem(20);
+  @include lineHeight(20, 34);
+  padding-bottom: rem(12);
+  text-align: center;
+  
+  @include mq('md') {
+    padding-bottom: rem(21);
+  }
+}
+
+.p-modal-reserve__form {
+  height: calc(100% - #{rem(34 + 22)});
+  margin-top: rem(24);
+  overflow-y: auto;
+  
+  @include mq('md') {
+    margin-top: rem(30);
+  }
+}
+
+.p-modal-reserve__thanks {
+  display: none;
+  text-align: center;
+}

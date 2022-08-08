@@ -1,0 +1,53 @@
+@use "../../global/" as *;
+
+.p-post {
+  align-items: flex-start;
+  background-color: $color-gray-light;
+  color: $color-text;
+  display: flex;
+  padding: rem(15) rem(15) rem(15) rem(10);
+  transition: background-color $duration, color $duration;
+}
+
+.p-post:focus,
+.p-post:hover {
+  background-color: $color-gray-dark;
+  color: $color-text02;
+}
+
+.p-post__image {
+  flex-shrink: 0;
+  position: relative;
+  width: rem(103);
+}
+
+.p-post__image::before {
+  content: '';
+  display: block;
+  @include paddingTopHack(103, 100);
+}
+
+.p-post__image>img {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.p-post__body {
+  margin-left: rem(30);
+  width: calc(100% - #{rem(103) - #{rem(30)}});
+}
+
+.p-post__published {
+  font-size: rem(14);
+}
+
+.p-post__title {
+  font-size: rem(16);
+  font-weight: $medium;
+  @include lineHeight(16, 32);
+}
