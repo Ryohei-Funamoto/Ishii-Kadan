@@ -13,7 +13,3 @@ _static/dist/
 #_server/wp/wp-content/uploads/
 #_server/wp/wp-content/index.php
 #_server/wp/wp-content/ewww/
-
-_assets/font
-_assets/img
-_assets/js/lib
